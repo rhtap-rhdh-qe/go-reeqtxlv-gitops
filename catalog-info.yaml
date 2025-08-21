@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: go-reeqtxlv-gitops
+  description: This is GitOps manifest for go-reeqtxlv   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=go-reeqtxlv
+    backstage.io/kubernetes-id: go-reeqtxlv 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: go-reeqtxlv-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:go-reeqtxlv
